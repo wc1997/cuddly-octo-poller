@@ -1,5 +1,8 @@
 ibkr:
-  endpoint: ""
-  apiKey: ""
-  qps: 10
+  twsHost: "127.0.0.1"
+  twsPort: 4002
+  clientId: 1
+  account: ""
+  mode: "paper"
+  readOnly: true
   timeout: 5000
