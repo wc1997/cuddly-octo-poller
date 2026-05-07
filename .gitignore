@@ -1,1 +1,11 @@
 config/config.yml
+
+# Local dotenv secrets
+.env
+.env.*
+!.env.example
+
+# Common local secret files
+*.pem
+*.key
+*.p12
