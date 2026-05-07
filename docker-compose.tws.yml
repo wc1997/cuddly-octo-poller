@@ -4,8 +4,9 @@ services:
     container_name: ibkr-gateway
     restart: unless-stopped
     ports:
-      - "4002:4002"
-      - "5900:5900"
+      - "127.0.0.1:4001:4001"
+      - "127.0.0.1:4002:4002"
+      - "127.0.0.1:5900:5900"
     environment:
       TWS_USERID: ${IBKR_USERNAME:?Set IBKR_USERNAME in .env}
       TWS_PASSWORD: ${IBKR_PASSWORD:?Set IBKR_PASSWORD in .env}
@@ -13,3 +14,4 @@ services:
       READ_ONLY_API: ${IBKR_READ_ONLY_API:-yes}
       VNC_SERVER_PASSWORD: ${IBKR_VNC_PASSWORD:-ibkrvnc}
       TWOFA_TIMEOUT_ACTION: ${IBKR_2FA_TIMEOUT_ACTION:-exit}
+      TWS_LISTEN_IP: 0.0.0.0
